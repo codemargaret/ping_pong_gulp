@@ -47,6 +47,7 @@ $(document).ready(function() {
     var num2 = parseInt($('#num2').val());
     var simpleCalculator = new Calculator("hot pink");
     var output;
+    
     $("#add").click(function() {
       var output = simpleCalculator.addnum(num1, num2);
       $("#output").text(output);
