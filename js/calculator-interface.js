@@ -7,6 +7,7 @@ $(document).ready(function() {
     var num2 = parseInt($('#num2').val());
     var simpleCalculator = new Calculator("hot pink");
     var output;
+    
     $("#add").click(function() {
       var output = simpleCalculator.addnum(num1, num2);
       $("#output").text(output);
@@ -26,28 +27,5 @@ $(document).ready(function() {
       var output = simpleCalculator.dividenum(num1, num2);
       $("#output").text(output);
     });
-  });
-});
-
-var Calculator = require('./../js/pingpong.js').calculatorModule;
-
-$(document).ready(function() {
-  $('#ping-pong-form').submit(function(event) {
-    event.preventDefault();
-    var goal = $('#goal').val();
-    var simpleCalculator = new Calculator("hot pink");
-    var output = simpleCalculator.pingPong(goal);
-    output.forEach(function(element) {
-      $('#solution').append("<li>" + element + "</li>");
-    });
-  });
-});
-
-$(document).ready(function(){
-  $('#signup').submit(function(event){
-    event.preventDefault();
-    var email = $('#email').val();
-    $('#signup').hide();
-    $('#solution').prepend('<p>Thank you, ' + email + ' has been added to our list!</p>');
   });
 });
